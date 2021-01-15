@@ -1,0 +1,22 @@
+tutorial 
+https://dev.to/dendihandian/rabbitmq-queue-driver-for-laravel-3ng4
+https://medium.com/@behzadbabaei/developing-microservices-by-using-lumen-rabbitmq-part-1-ad6a77f0e812
+https://php-enqueue.github.io/transport/amqp_bunny/#create-context
+
+#php.ini
+enable extension=sockets
+
+#install
+composer require vladimir-yuldashev/laravel-queue-rabbitmq
+composer require enqueue/amqp-bunny:^0.8
+
+#run
+rabbitmq-plugins enable rabbitmq_management
+http://localhost:15672/#/queues
+Rabbitmqctl status
+
+#user password: guest 1234
+
+php artisan queue:work
+php artisan order:create 
+php artisan rabbitmq:consume
